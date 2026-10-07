@@ -1,23 +1,31 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import TabBar from '../components/TabBar';
+import { colors } from '../constants/colors';
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Salud</Text>
-      <Text>Mi primera aplicación con Expo</Text>
-    </View>
+    <SafeAreaView style={styles.screen}>
+      <View style={styles.content}>
+        {/* COMPONENTS: add each one right above this line */}
+      </View>
+
+      <TabBar />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: colors.background,
   },
-  title: {
-    fontSize: 32,
-    fontWeight: "bold",
-    marginBottom: 10,
+  content: {
+    flex: 1,
+    paddingHorizontal: 20,
+    paddingTop: 8,
+    paddingBottom: 44,
+    gap: 14,
+    justifyContent: 'space-between',
   },
 });
